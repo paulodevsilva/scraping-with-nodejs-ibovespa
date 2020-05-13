@@ -18,7 +18,7 @@ const messageBody = async () => {
     currentDate = format(currentDate, 'dd/MM/yyyy');
 
     const fundRef = db.collection('actionsFund');
-    const getData = await fundRef.where('askDate', '==', currentDate).get();
+    const getData = await fundRef.where('askDate', '==', '11/05/2020').get();
     const body = getData.docs.map(doc => {
         const data = doc.data()
         return data
