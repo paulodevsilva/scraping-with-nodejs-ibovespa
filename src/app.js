@@ -15,9 +15,7 @@ rules.hour = 08
 const URL = process.env.SCRAPING_URL;
 
 const getBody = async () => {
-       const browser = await puppeteer.launch({
-           headless: true
-       })
+       const browser = await puppeteer.launch()
        const page = await browser.newPage()
        await page.goto(URL, {
         waitUntil: 'networkidle0'
