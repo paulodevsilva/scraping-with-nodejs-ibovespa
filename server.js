@@ -9,6 +9,9 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get('/', async (req, res) => {
+    res.send('Scraping bot')
+});
 
 require('./src/app');
 
