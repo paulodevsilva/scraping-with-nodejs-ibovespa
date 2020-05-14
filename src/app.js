@@ -82,10 +82,23 @@ const saveDataToDB = async (db, info) => {
     console.log(`> [saveDataToDB] Starting done!`);
 }
 
+const keepAlive = async () => {
+    setInterval(async ()=>{
+        fetch('https://scraping-bot.herokuapp.com/', {
+            method: 'GET',
+           
+        })
+        
+        console.log('op')
+    }, 1200 * 1000)
+}
+
 const start = async () => {
     require('./utils/bot');
     require('./services/firebase');
-    
+
+    await keepAlive()
+
     const job = schedule.scheduleJob(rules, async () => {
         const body = await getBody();
         const info = await getInfo(body);
