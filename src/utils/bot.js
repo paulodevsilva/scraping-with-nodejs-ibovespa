@@ -19,49 +19,45 @@ const messageTemplate = async (text, botMsg) => {
     const {fundName, quotaDate, quotaValue, profitability: {onDay, inMonth, previousMonth}} = botMsg
     if (text == '/all') {
         const msg = 
-`
- Nome do Fundo:  ${fundName}
- Data da Cota: ${quotaDate}
- Valor da Cota: ${quotaValue}\n
- Rentabilidade
- Neste dia: ${onDay}
- Neste mês: ${inMonth}
- No mês anterior: ${previousMonth}
-`
+        `
+        Nome do Fundo:  ${fundName}\nData da Cota: ${quotaDate}\nValor da Cota: ${quotaValue}\nRentabilidade\nNeste dia: ${onDay}\nNeste mês: ${inMonth}\nNo mês anterior: ${previousMonth}
+        `
+
+
     return msg
     } else if (text == '/onDay') {
         const msg = 
-        `Rentalidade
-         Hoje: ${onDay}
+        `Rentalidade*\nHoje: ${onDay}
         `
 
         return msg
     } else if (text == '/inMonth') {
         const msg = 
-        `Rentabilidade
-         Neste mês: ${inMonth}
+        `Rentabilidade*\nNeste mês: ${inMonth}
         `
 
         return msg
     } else if (text == '/previousMonth') {
         const msg = 
-        `Rentabilidade
-         no mês anterior: ${previousMonth}
+        `Rentabilidade*\nNo mês anterior: ${previousMonth}
         `
 
         return msg
-    } else if (text = '/list') {
+    } else if (text == '/kill') {
         const msg = 
         `
-Lista de comandos\n
-/all : Retorna todas as informações
-/onDay : Retorna o valor da rentablidade referente a dia atual.
-/inMonth : Retorna o valor da rentablidade referente ao mês atual.
-/previousMonth : Retorna o valor da rentablidade referente ao mês anterior.
+        Seu nome já foi removido da nossa base de dados, se desejar receber as informações novamente, é só mandar uma mensagem.😉
+        `
+        return msg
+    }  else if (text = '/list') {
+        const msg = 
+        `
+        Lista de comandos\n\n/all : Retorna todas as informações\n/onDay : Retorna o valor da rentablidade referente a dia atual.\n/inMonth : Retorna o valor da rentablidade referente ao mês atual.\n/previousMonth : Retorna o valor da rentablidade referente ao mês anterior.\n/kill : Não receber mais mensagens diariamente.  
+
         `
 
         return msg
-    } 
+    }
 
     return msg
 }
@@ -81,16 +77,9 @@ const currentMessage = async () => {
 
     const {fundName, quotaDate, quotaValue, profitability: {onDay, inMonth, previousMonth}} = body[0]
     const botMsg = 
-`
- Nome do Fundo: ${fundName}
- Data da Cota: ${quotaDate}
- Valor da Cota: ${quotaValue}
-
- Rentabilidade
- No dia: ${onDay}
- No mês: ${inMonth}
- No mês anterior: ${previousMonth}
-`
+    `
+    Nome do Fundo:  ${fundName}\nData da Cota: ${quotaDate}\nValor da Cota: ${quotaValue}\nRentabilidade\nNeste dia: ${onDay}\nNeste mês: ${inMonth}\nNo mês anterior: ${previousMonth}
+    `
    
     return {botMsg, msgData: body[0]}
 }
