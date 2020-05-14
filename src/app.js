@@ -86,16 +86,16 @@ const start = async () => {
     require('./utils/bot');
     require('./services/firebase');
     
-    const job = schedule.scheduleJob(rules, async () => {
-        const body = await getBody();
-        const info = await getInfo(body);
-        const processing = await processingData(info);
-        const saveData = await saveDataToDB(db, processing);
+    // const job = schedule.scheduleJob(rules, async () => {
+    //     const body = await getBody();
+    //     const info = await getInfo(body);
+    //     const processing = await processingData(info);
+    //     const saveData = await saveDataToDB(db, processing);
     
-    });
-    // const body = await getBody();
-    // const info = await getInfo(body);
-    // const processing = await processingData(info);
+    // });
+    const body = await getBody();
+    const info = await getInfo(body);
+    const processing = await processingData(info);
     // const saveData = await saveDataToDB(db, processing);
 
 
