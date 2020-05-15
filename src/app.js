@@ -10,7 +10,7 @@ const { db } = require('./services/firebase');
 
 const rules = new schedule.RecurrenceRule()
 rules.hour = 19
-rules.minute = 02
+rules.minute = 11
 
 
 const URL = process.env.SCRAPING_URL;

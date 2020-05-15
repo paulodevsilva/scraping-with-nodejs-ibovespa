@@ -11,8 +11,9 @@ const rules = new schedule.RecurrenceRule()
 rules.hour = 08
 rules.minute = 02
 
-
-
+telegram.on('polling_error', function(err) {
+    console.log(err)
+});
 
 
 const messageTemplate = async (text, botMsg) => {
@@ -63,7 +64,6 @@ const messageTemplate = async (text, botMsg) => {
 }
 
 
-
 const currentMessage = async () => {
     let currentDate = new Date();
     currentDate = format(currentDate, 'dd/MM/yyyy');
@@ -75,7 +75,6 @@ const currentMessage = async () => {
         const data = doc.data()
         return data
     })   
- 
 
     const {fundName, quotaDate, quotaValue, profitability: {onDay, inMonth, previousMonth}} = body[0]
     const botMsg = 
@@ -85,13 +84,6 @@ const currentMessage = async () => {
    
     return {botMsg, msgData: body[0]}
 }
-
-
-
-telegram.on('polling_error', function(err) {
-    console.log(err)
-});
-
 
 
 const verifyExistClient = async (clientData) => {
