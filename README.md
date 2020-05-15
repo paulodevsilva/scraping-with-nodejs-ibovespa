@@ -31,6 +31,8 @@ npm install or yarn install
 SCRAPING_URL=https://www.santander.com.br/portal/pam/script/rentabilidade/RentabilidadeFundosAsset.do?codSegMercado=34
 
 TELEGRAM_TOKEN= 'Seu Token'
+
+FIREBASE_API_KEY=
 ```
 
 ## 1.., 2..., 3...Testing! ##
