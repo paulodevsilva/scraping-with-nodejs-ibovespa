@@ -67,6 +67,7 @@ const messageTemplate = async (text, botMsg) => {
 const currentMessage = async () => {
     let currentDate = new Date();
     currentDate = format(currentDate, 'dd/MM/yyyy');
+    console.log(currentDate)
 
     const fundRef = db.collection('actionsFund');
     const getData = await fundRef.where('askDate', '==', currentDate).get();
@@ -74,11 +75,12 @@ const currentMessage = async () => {
         const data = doc.data()
         return data
     })   
+ 
 
     const {fundName, quotaDate, quotaValue, profitability: {onDay, inMonth, previousMonth}} = body[0]
     const botMsg = 
     `
-    Nome do Fundo:  ${fundName}\nData da Cota: ${quotaDate}\nValor da Cota: ${quotaValue}\nRentabilidade\nNeste dia: ${onDay}\nNeste mês: ${inMonth}\nNo mês anterior: ${previousMonth}
+    Nome do Fundo:  ${fundName}\nData da Cota: ${quotaDate}\nValor da Cota: ${quotaValue}\n\nRentabilidade\nNeste dia: ${onDay}\nNeste mês: ${inMonth}\nNo mês anterior: ${previousMonth}
     `
    
     return {botMsg, msgData: body[0]}

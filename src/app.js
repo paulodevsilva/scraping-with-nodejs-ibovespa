@@ -9,13 +9,20 @@ const { db } = require('./services/firebase');
 
 
 const rules = new schedule.RecurrenceRule()
-rules.hour = 08
+rules.hour = 19
+rules.minute = 02
 
 
 const URL = process.env.SCRAPING_URL;
 
 const getBody = async () => {
-       const browser = await puppeteer.launch()
+       const browser = await puppeteer.launch({
+            headless: true,
+            args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox'
+            ]
+       })
        const page = await browser.newPage()
        await page.goto(URL, {
         waitUntil: 'networkidle0'
@@ -44,6 +51,7 @@ const getBody = async () => {
 const getInfo = async (body) => {
     const info = body.split("SANTANDER IBOVESPA ATIVO AÇÕES").toString()
     console.log(`> [getInfo] Starting done!`)
+    console.log(info)
     return info
          
 }
