@@ -82,21 +82,33 @@ const processingData = async (info) => {
     
 }
 const saveDataToDB = async (db, info) => {
-    const fundRef = db.collection('actionsFund');
     const data = info
-    fundRef.add(data);
+    let currentDate = new Date();
+    currentDate = format(currentDate, 'dd/MM/yyyy');
+
+    const fundRef = db.collection('actionsFund');
+    const getFund = await fundRef.where('askDate', '==', currentDate).get();
+    const body = getFund.docs.map(doc => {
+        const data = doc.data()
+        return data
+    })
+    if(body[0] == undefined) {
+        fundRef.add(data);
+    }  
 
     console.log(`> [saveDataToDB] Starting done!`);
 }
 
 const keepAlive = async () => {
+    let currentDate = new Date();
+    currentDate = format(currentDate, 'dd/MM/yyyy');
     setInterval(async ()=>{
         fetch('https://scraping-bot.herokuapp.com/', {
             method: 'GET',
            
         })
         
-        console.log('op')
+        console.log(`Date: ${currentDate}`)
     }, 1200 * 1000)
 }
 
