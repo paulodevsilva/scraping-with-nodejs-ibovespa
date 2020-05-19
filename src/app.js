@@ -5,7 +5,7 @@ const schedule = require('node-schedule');
 const fs = require('fs');
 const { format } = require('date-fns')
 
-const { db } = require('./services/firebase');
+const { db } = require('./db/firebase');
 
 
 const rules = new schedule.RecurrenceRule()
@@ -113,8 +113,8 @@ const keepAlive = async () => {
 }
 
 const start = async () => {
-    require('./utils/bot');
-    require('./services/firebase');
+    require('./services/bot');
+    require('./db/firebase');
 
     await keepAlive()
 
@@ -125,10 +125,6 @@ const start = async () => {
         const saveData = await saveDataToDB(db, processing);
     
     });
-    // const body = await getBody();
-    // const info = await getInfo(body);
-    // const processing = await processingData(info);
-    // const saveData = await saveDataToDB(db, processing);
 
 
 

@@ -15,4 +15,4 @@ app.get('/', async (req, res) => {
 
 require('./src/app');
 
-app.listen(port, () => console.log(`running in port: ${port}`));
+app.listen(port, () => console.log(`> [server] : running in port: ${port}`));
