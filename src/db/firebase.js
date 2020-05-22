@@ -9,16 +9,11 @@ const accountKeys = {
     client_id: process.env.FIREBASE_CLIENT_ID,
     auth_uri: process.env.FIREBASE_AUTH_URI,
     token_uri: process.env.FIREBASE_TOKEN_URI,
-    auth_provider_x509_cert_url: process.env.IREBASE_AUTH_PROVIDER_CERT_URL,
-    client_x509_cert_url: process.env.FIREBASE_CERT_UR,
+    auth_provider_x509_cert_url: process.env.FIREBASE_AUTH_PROVIDER_CERT_URL,
+    client_x509_cert_url: process.env.FIREBASE_CERT_URL,
 
 }
 
-// const config = {
-//     databaseURL: process.env.FIREBASE_DB_URL,
-//     projectId: process.env.FIREBASE_PROJECT_ID,
-//     serviceAccount: accountKeys
-// };
 
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,

@@ -8,8 +8,8 @@ const telegram = new telegramBot(process.env.TELEGRAM_TOKEN, {polling: true});
 
 
 const rules = new schedule.RecurrenceRule()
-rules.hour = 08
-rules.minute = 02
+rules.hour = 09
+rules.minute = 10
 
 telegram.on('polling_error', function(err) {
     console.log(err)
