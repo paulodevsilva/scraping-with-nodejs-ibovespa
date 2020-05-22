@@ -1,49 +1,70 @@
 # Scraping-bot
 
-By [Paulo Silva](https://github.com/paulodevsilva)
-
-## Objective
-
-### Receive daily information about IBOVESPA via telegram, comparing profitability.
+[![Author](https://img.shields.io/badge/author-paulodevsilva-D54F44?style=flat-square)](https://github.com/paulodevsilva)
+[![Stars](https://img.shields.io/github/stars/paulodevsilva/foodfy?color=D54F44&style=flat-square)](https://github.com/paulodevsilva/scraping-with-nodejs-ibovespa)
 
 
-## Principal Stack
 
-- NodeJs
-- Puppeteer
-- Firestore(Firebase)
+> Receive daily information about IBOVESPA via telegram & comparing profitability.
 
 
-# Steps ....
+# :pushpin: Table of Contents
 
-## Cloning Repository ##
+* [Installation](#construction_worker-installation)
+* [Getting Started](#runner-getting-started)
+* [Next Features](#rocket-next-features)
+
+
+
+# :construction_worker: Installation
+
+**You need to install [Node.js](https://nodejs.org/en/download/) and [Yarn](https://yarnpkg.com/) first, then clone the repository.**
+
+**Cloning Repository**
 
 ```
-git clone https://github.com/paulodevsilva/webScraping-santander-ibovespa-actions.git
+git clone https://github.com/paulodevsilva/scraping-with-nodejs-ibovespa.git
 
+```
+
+**Install dependencies**
+``` 
 npm install or yarn install
 ```
 
-
-## Insert environment variables
+**Insert environment variables**
 
 ```
 SCRAPING_URL=https://www.santander.com.br/portal/pam/script/rentabilidade/RentabilidadeFundosAsset.do?codSegMercado=34
 
-TELEGRAM_TOKEN= 'Seu Token'
+TELEGRAM_TOKEN= 'Your Token'
 
-FIREBASE_API_KEY=
+FIREBASE_API_KEY= 'Your Credentials'
+FIREBASE_TYPE= 'Your Credentials'
+FIREBASE_PROJECT_ID= 'Your Credentials'
+FIREBASE_PRIVATE_KEY= 'Your Credentials'
+FIREBASE_CLIENT_EMAIL= 'Your Credentials'
+FIREBASE_CLIENT_ID= 'Your Credentials'
+FIREBASE_AUTH_URI= 'Your Credentials'
+FIREBASE_AUTH_PROVIDER_CERT_URL= 'Your Credentials'
+FIREBASE_CERT_URL= 'Your Credentials'
+FIREBASE_AUTH_DOMAIN= 'Your Credentials'
+FIREBASE_DB_URL= 'Your Credentials'
 ```
 
-## 1.., 2..., 3...Testing! ##
+# :runner: Getting Started
+
+Run the following command in order to start the application in a development environment:
+
 ```
-yarn start ou npm run start
+yarn dev or npm run dev
 ```
 
 
-# Next features
+## :rocket: Next Features
 
 - <s>Persist data in database</s>.
 - Generate csv with the data.
 - Compare profitability.
-- New funds
+- Unclouple api.
+- New funds.
