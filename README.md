@@ -1,7 +1,7 @@
 # Scraping-bot
 
 [![Author](https://img.shields.io/badge/author-paulodevsilva-D54F44?style=flat-square)](https://github.com/paulodevsilva)
-[![Stars](https://img.shields.io/github/stars/paulodevsilva/foodfy?color=D54F44&style=flat-square)](https://github.com/paulodevsilva/scraping-with-nodejs-ibovespa)
+[![Stars](https://img.shields.io/github/stars/paulodevsilva/foodfy?color=D54F44&style=flat-square)](https://github.com/paulodevsilva/scraping-with-nodejs-ibovespa.git)
 
 
 
